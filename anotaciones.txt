@@ -1,0 +1,14 @@
+PROMPT UTILIZADO PARA GENERAR EL APLICATIVO:
+
+"Crea una aplicación en Streamlit llamada Azura StarScan que permita 
+predecir si un objeto de interés planetario del telescopio Kepler 
+de la NASA es un exoplaneta confirmado o un falso positivo. 
+La app debe tener inputs numéricos para: período orbital, radio del 
+planeta, temperatura de equilibrio, flujo de insolación, señal-ruido 
+del tránsito, temperatura estelar y radio estelar. 
+Debe cargar un modelo Random Forest guardado en formato pkl dentro 
+de una carpeta llamada modelos/, mostrar el resultado con colores 
+(verde para confirmado, rojo para falso positivo), mostrar el 
+porcentaje de confianza del modelo, e incluir el nombre 
+Allison Carolina Negreiros Castillo, NRC 6817, y un enlace al 
+cuaderno de Google Colab."
