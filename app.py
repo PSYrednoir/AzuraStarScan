@@ -138,29 +138,44 @@ st.markdown("""
 
 # ============ INPUTS ============
 st.markdown("### 🪐 Características del objeto")
+st.markdown("""
+<p style='color: #a0c4ff; font-size: 0.9em;'>
+💡 No sabes qué valores ingresar? Usa los valores por defecto como ejemplo 
+de un exoplaneta típico.
+</p>
+""", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
     periodo = st.number_input("⏱️ Período orbital (días)",
                                min_value=0.1, max_value=1000.0, value=10.0)
+    st.caption("Tiempo que tarda el planeta en dar una vuelta completa a su estrella. La Tierra tiene 365 días.")
+
     radio = st.number_input("📏 Radio del planeta (R⊕)",
                              min_value=0.1, max_value=100.0, value=2.0)
+    st.caption("Tamaño del planeta comparado con la Tierra. 1.0 = igual que la Tierra, 11.0 = igual que Júpiter.")
+
     temperatura = st.number_input("🌡️ Temperatura de equilibrio (K)",
                                    min_value=100, max_value=5000, value=800)
+    st.caption("Temperatura estimada de la superficie en Kelvin. La Tierra tiene ~255 K. Más de 1000 K es muy caliente.")
+
     insolacion = st.number_input("☀️ Flujo de insolación",
                                   min_value=0.0, max_value=10000.0, value=100.0)
+    st.caption("Cantidad de energía que recibe el planeta de su estrella comparado con la Tierra. 1.0 = igual que la Tierra.")
 
 with col2:
     snr = st.number_input("📡 Señal-ruido del tránsito",
                            min_value=0.0, max_value=1000.0, value=20.0)
+    st.caption("Qué tan clara fue la señal del planeta al pasar frente a su estrella. Valores más altos = señal más confiable.")
+
     temp_estelar = st.number_input("⭐ Temperatura estelar (K)",
                                     min_value=3000, max_value=10000, value=5500)
+    st.caption("Temperatura de la estrella anfitriona. El Sol tiene ~5778 K. Estrellas más frías son naranjas o rojas.")
+
     radio_estelar = st.number_input("🌞 Radio estelar (R☉)",
                                      min_value=0.1, max_value=10.0, value=1.0)
-
-st.markdown("---")
-
+    st.caption("Tamaño de la estrella comparado con el Sol. 1.0 = igual que el Sol.")
 # ============ PREDICCIÓN ============
 if st.button("🚀 Analizar objeto estelar"):
     entrada = np.array([[periodo, radio, temperatura,
